@@ -2,7 +2,7 @@ import turtle
 import pandas
 
 answer_state_list = []
-state_data = pandas.read_csv('India-States-Game/28_states.csv')
+state_data = pandas.read_csv('28_states.csv')
 state_data.reset_index(drop=True, inplace=True)
 state_list = state_data["state"].tolist()
 
@@ -11,8 +11,8 @@ total_number_of_states = len(state_list)
 screen = turtle.Screen()
 screen.title("Indian States Game")
 
-screen.addshape("India-States-Game/india-states.gif")
-turtle.shape("India-States-Game/india-states.gif")
+screen.addshape("india-states.gif")
+turtle.shape("india-states.gif")
 
 count = 1
 while count <= total_number_of_states:
@@ -24,7 +24,7 @@ while count <= total_number_of_states:
             if state not in answer_state_list:
                 missing_state.append(state)
         data = pandas.DataFrame(missing_state)
-        data.to_csv("India-States-Game/states_to_learn.csv")
+        data.to_csv("states_to_learn.csv")
         break
 
     if answer_state in state_list:
@@ -38,17 +38,3 @@ while count <= total_number_of_states:
     count +=1
 
 turtle.mainloop()
-
-
-
-
-
-
-
-
-
-# def get_mouse_click(x, y):
-#     print(x, y)
-
-# turtle.onscreenclick(get_mouse_click)
-
